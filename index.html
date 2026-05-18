@@ -4,9 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yangiliklar: Katta yutuq</title>
+    
+    <!-- YANDEX METRICA CODE START -->
+    <script type="text/javascript" >
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();
+       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+       // ЗАМЕНИ 00000000 НА СВОЙ НОМЕР СЧЕТЧИКА
+       ym(109291625, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+       });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/00000000" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- YANDEX METRICA CODE END -->
+
     <style>
         :root {
-            --primary-color: #00a8ff; /* Цвет бренда 1win часто синий/голубой */
+            --primary-color: #00a8ff;
             --bg-color: #f4f4f4;
             --text-color: #333;
         }
@@ -99,17 +119,18 @@
             display: block;
             width: 100%;
             padding: 20px;
-            background-color: #2ed573; /* Зеленый цвет действия */
+            background-color: #2ed573;
             color: white;
             text-align: center;
             text-decoration: none;
             font-size: 22px;
             font-weight: bold;
             border-radius: 12px;
-            box-shadow: 0 4px 0 #26af61; /* Эффект кнопки */
+            box-shadow: 0 4px 0 #26af61;
             transition: transform 0.1s;
             margin-top: 20px;
             text-transform: uppercase;
+            cursor: pointer;
         }
 
         .cta-button:active {
@@ -194,7 +215,6 @@
     <div class="content">
         <h1>Тошкентлик талаба 1WIN орқали қандай қилиб 100 миллион сўм ютди?</h1>
         
-        <!-- Картинка: парень с телефоном или деньги -->
         <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=600&q=80" alt="Winner" class="hero-image">
 
         <p><strong>Бехруз, 21 ёш:</strong> «Мен оддий ўйинларни яхши кўраман. Лекин 1WIN платформасидаги бонус тизими мени ҳайратга солди. Мен бор-йўғи 50 минг сўм тикдим ва бир соат ичида ютуғимни 100 баравар оширдим.»</p>
@@ -254,13 +274,15 @@
     // Дата
     const dateElement = document.getElementById('current-date');
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    // Можно подключить библиотеку для узбекского языка, но пока оставим стандарт
     dateElement.textContent = new Date().toLocaleDateString('ru-RU', options);
 
+    // Функция отслеживания клика для Яндекс.Метрики
     function trackClick() {
-        console.log('User clicked CTA');
-        // Сюда можно добавить отправку события в Яндекс.Метрику
-        // ym(XXXXXX, 'reachGoal', 'cta_click');
+        if (typeof ym !== 'undefined') {
+            // ЗАМЕНИ 00000000 НА СВОЙ НОМЕР СЧЕТЧИКА
+            ym(109291625, 'reachGoal', 'button_click'); 
+        }
+        console.log('Button clicked');
     }
 </script>
 
